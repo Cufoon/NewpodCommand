@@ -1,0 +1,54 @@
+{
+  "name": "newpod-cli",
+  "version": "0.0.1",
+  "author": {
+    "name": "Lin Cufoon",
+    "email": "cufoon@gmail.com",
+    "url": "https://cufoon.com/"
+  },
+  "description": "A cli tool to manage dnspod.",
+  "keywords": [
+    "dns",
+    "dnspod",
+    "record"
+  ],
+  "homepage": "https://github.com/Cufoon/NewpodCommand",
+  "bugs": {
+    "url": "https://github.com/Cufoon/NewpodCommand/issues",
+    "email": "cufoon@gmail.com"
+  },
+  "engines": {
+    "node": ">=12.7.0"
+  },
+  "exports": "./tsbuild/api.js",
+  "bin": {
+    "newpod": "./build/app.cjs"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cufoon/NewpodCommand.git"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "node ./script/clear.js && tsc --build && node ./script/makebin.js && esbuild ./tsbuild/app.js --bundle --platform=node --format=cjs --outfile=./build/app.cjs && node ./script/clearTemp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@commander-js/extra-typings": "^12.0.0",
+    "axios": "^1.6.7",
+    "parse-domain": "^8.0.1",
+    "qs": "^6.11.2",
+    "tencentcloud-sdk-nodejs-dnspod": "^4.0.797"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "@types/qs": "^6.9.11",
+    "esbuild": "^0.20.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  }
+}
