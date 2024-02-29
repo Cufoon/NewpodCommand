@@ -15675,7 +15675,7 @@ var {
 } = import_index.default;
 
 // tsbuild/version.js
-var APP_VERSION_INFO = "NewpodCommand v0.0.1(2024/2/23 17:18:12) @Cufoon";
+var APP_VERSION_INFO = "NewpodCommand v0.0.1(2024/2/29 21:48:08) @Cufoon";
 
 // tsbuild/store.js
 var defaultGlobalData = {
@@ -16142,7 +16142,7 @@ var parseDomain = (hostname, options2) => {
 
 // tsbuild/util.js
 var getSplitDomain = (fullDomain) => {
-  const parseResult = parseDomain(fullDomain);
+  const parseResult = parseDomain(fullDomain, { validation: Validation.Lax });
   let mainDomain = fullDomain;
   let subDomain = "";
   if (parseResult.type === ParseResultType.Listed) {

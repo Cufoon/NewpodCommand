@@ -20,7 +20,7 @@ const dataApp = fs.readFileSync(appFilePath);
 fs.writeFileSync(appFilePath, '#!/usr/bin/env node\n');
 fs.appendFileSync(appFilePath, dataApp);
 
-const nowVersion = `NewpodCommand v${appVersion}(${nowDate.toLocaleDateString()} ${nowDate.toLocaleTimeString()})`;
+const nowVersion = `NewpodCommand v${appVersion}(${nowDate.toLocaleDateString('zh-CN')} ${nowDate.toLocaleTimeString('zh-CN', { hour12: false })})`;
 const dataAppInfoPlaceholder = fs.readFileSync(appInfoFilePath).toString();
 const dataAppInfo = dataAppInfoPlaceholder.replace(
   'cufoon_application_version_info_placehodler',

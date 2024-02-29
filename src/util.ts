@@ -1,8 +1,8 @@
-import { ParseResultType, parseDomain } from 'parse-domain';
+import { ParseResultType, parseDomain, Validation } from 'parse-domain';
 import { getIsShowVerbose } from './store.js';
 
 export const getSplitDomain = (fullDomain: string) => {
-  const parseResult = parseDomain(fullDomain);
+  const parseResult = parseDomain(fullDomain, { validation: Validation.Lax });
   let mainDomain = fullDomain;
   let subDomain = '';
   if (parseResult.type === ParseResultType.Listed) {
